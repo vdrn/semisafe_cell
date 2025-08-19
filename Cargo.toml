@@ -1,0 +1,12 @@
+[package]
+name = "semisafe_cell"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+full_safety = []
+coerce_unsized = []
+default = []
+
+[dependencies]
+atomic_refcell = { git = "https://github.com/vdrn/atomic_refcell.git" }

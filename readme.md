@@ -1,0 +1,11 @@
+# semisafe_cell
+
+A interior-mutability cell that enforces runtime borrow checking in debug builds or when `full_safety` is enabled, **otherwise the caller is reponsible for upholding Rust's aliasing rules**.
+
+Variants: 
+- `SemiSafeCell<T>`: single-threaded (uses `RefCell` for runtime borrow checking).
+- `SyncSemiSafeCell<T>`: thread-safe (uses `atomic_refcell::AtomicRefCell` for runtime borrow checking).
+
+Features:
+- `full_safety`: enable runtime borrow checks in release too.
+- `coerce_unsized`: nightly-only; allow `CoerceUnsized` coercions.
