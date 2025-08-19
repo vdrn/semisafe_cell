@@ -5,7 +5,7 @@ edition = "2024"
 
 [features]
 full_safety = []
-coerce_unsized = []
+coerce_unsized = ["atomic_refcell/coerce_unsized"]
 default = []
 
 [dependencies]
